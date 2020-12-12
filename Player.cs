@@ -21,7 +21,7 @@ namespace tennisSimulation
         internal string ID { get => id;  private set => id = value; }
         internal int Experience { get => experience; set => experience = value; }
         internal Hand PlayerHand { get => playerHand; set => playerHand = value; }
-        internal PlayerSkills PlayerSkills { get => playerSkills; private set => playerSkills = value; }
+        internal PlayerSkills PlayerSkills { get => playerSkills; set => playerSkills = value; }
         #endregion
         public Player(Hand _hand, int _experience)
         {

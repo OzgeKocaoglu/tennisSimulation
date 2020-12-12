@@ -11,6 +11,7 @@ namespace tennisSimulation
         public SkillSet()
         {
             skills = new List<Skill>();
+            InitiliazeSkills();
         }
 
         public void CreateSkill(string name, int value)
@@ -26,10 +27,19 @@ namespace tennisSimulation
 
         public void DisplaySkills()
         {
-            for(int i =0; i< skills.Count; i++)
+            Console.WriteLine("------------------------------------");
+            for (int i =0; i< skills.Count; i++)
             {
-                Console.WriteLine("Skill: " + i + "\nName: " + skills[i].Name);
+                Console.WriteLine("Skill: " + i + "\nName: " + skills[i].Name + "\nValue: " + skills[i].Value);
             }
         }
+
+        //TO DO: Json dosyasından çek.
+        public void InitiliazeSkills()
+        {
+            CreateSkill("Grass", 0);
+            CreateSkill("Hard", 0);
+        }
+
     }
 }

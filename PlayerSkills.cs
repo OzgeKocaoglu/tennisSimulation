@@ -6,20 +6,16 @@ namespace tennisSimulation
 {
     class PlayerSkills
     {
-        public SkillSet skills;
+        private SkillSet skills;
+        internal SkillSet SkillSet { get => skills; set => skills = value; }
         public PlayerSkills()
         {
             skills = new SkillSet();
-            IniliazeSkills();
         }
 
-        public void IniliazeSkills()
+        public void SetPlayerSkillValue(Skill skill, int value)
         {
-           /* for(int i =0; i< skills.GetSkills().Count; i++)
-            {
-                skills.GetSkills()[i].Value = 1;
-            }*/
-            
+
         }
 
     }

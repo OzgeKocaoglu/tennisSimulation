@@ -11,16 +11,17 @@ namespace tennisSimulation
 
         public Game()
         {
-            players = new List<Player>();
             skillSet = new SkillSet();
+            skillSet.DisplaySkills();
         }
 
         public void CreateNewGame()
         {
+            players = new List<Player>();
             CreatePlayers();
-            InitiliazeSkills();
         }
 
+        //TO DO: JSON Dosyasından çek. 
         public void CreatePlayers()
         {
             players.Add(new Player(Player.Hand.right, 0));
@@ -30,18 +31,12 @@ namespace tennisSimulation
 
             for (int i = 0; i < players.Count; i++)
             {
-                Console.WriteLine("Player " + i + "\nID: " + players[i].ID + "\nHand side: " + players[i].PlayerHand + "\nExperience: " + players[i].Experience);
-                Console.WriteLine("----------------------------------------");
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("Player " + i + "\nID: " + players[i].ID + "\nHand side: " + players[i].PlayerHand + "\nExperience: " + players[i].Experience + "\nPlayer Skills: " + players[i].PlayerSkills.SkillSet.GetSkills()[0].Name + "\nValue: " + players[i].PlayerSkills.SkillSet.GetSkills()[0].Value);
             }
 
         }
 
-        public void InitiliazeSkills()
-        {
-            skillSet.CreateSkill("Grass", 0);
-            skillSet.CreateSkill("Hard", 0);
-            skillSet.DisplaySkills();
-        }
 
         
     }
