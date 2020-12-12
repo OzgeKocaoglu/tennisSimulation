@@ -18,9 +18,10 @@ namespace tennisSimulation
         private PlayerSkills playerSkills;
         #endregion
         #region Getter/Setters
-        internal string ID { get => id;  set => id = value; }
+        internal string ID { get => id;  private set => id = value; }
         internal int Experience { get => experience; set => experience = value; }
         internal Hand PlayerHand { get => playerHand; set => playerHand = value; }
+        internal PlayerSkills PlayerSkills { get => playerSkills; private set => playerSkills = value; }
         #endregion
         public Player(Hand _hand, int _experience)
         {
@@ -35,11 +36,6 @@ namespace tennisSimulation
             playerHand = _hand;
             experience = _experience;
             playerSkills = new PlayerSkills();
-        }
-
-        public void AddSkills(Skill _skill)
-        {
-
         }
 
     }

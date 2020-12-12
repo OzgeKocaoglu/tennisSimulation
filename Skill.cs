@@ -10,11 +10,14 @@ namespace tennisSimulation
         private int skillValue;
         private int id;
 
+        internal string Name { get => skillName; set => skillName = value; }
+        internal int Value { get => skillValue; set => skillValue = value; }
+
         public Skill(string name, int value)
         {
             skillName = name;
             skillValue = value;
-            id = GlobalVariables.SKILL_COUNT + 1;
+            id = ++GlobalVariables.SKILL_COUNT;
         }
 
     }
