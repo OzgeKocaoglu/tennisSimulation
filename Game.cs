@@ -20,9 +20,17 @@ namespace tennisSimulation
 
         public void CreatePlayers()
         {
-            players.Add(new Player("1", Player.Hand.right, 0));
-            Console.WriteLine(players[0].ID);
-            Console.WriteLine(players[0].PlayerHand);
+            players.Add(new Player(Player.Hand.right, 0));
+            players.Add(new Player(Player.Hand.left, 5));
+            players.Add(new Player(Player.Hand.left, 10));
+            players.Add(new Player(Player.Hand.right, 15));
+
+            for(int i=0; i<players.Count; i++)
+            {
+                Console.WriteLine("Player "+ i + "\nID: " + players[i].ID + "\nHand side: " + players[i].PlayerHand + "\nExperience: " + players[i].Experience);
+                Console.WriteLine("----------------------------------------");
+            }
+
         }
     }
 }

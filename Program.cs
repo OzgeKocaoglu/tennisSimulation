@@ -9,7 +9,6 @@ namespace tennisSimulation
         {
             Game newGame = new Game();
             newGame.CreateNewGame();
-            Console.WriteLine("Hello World!");
             Console.ReadLine();
             
         }
