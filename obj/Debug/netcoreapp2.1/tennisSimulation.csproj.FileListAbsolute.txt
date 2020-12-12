@@ -1,0 +1,11 @@
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\bin\Debug\netcoreapp2.1\tennisSimulation.deps.json
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\bin\Debug\netcoreapp2.1\tennisSimulation.runtimeconfig.json
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\bin\Debug\netcoreapp2.1\tennisSimulation.runtimeconfig.dev.json
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\bin\Debug\netcoreapp2.1\tennisSimulation.dll
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\bin\Debug\netcoreapp2.1\tennisSimulation.pdb
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\obj\Debug\netcoreapp2.1\tennisSimulation.csprojAssemblyReference.cache
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\obj\Debug\netcoreapp2.1\tennisSimulation.csproj.CoreCompileInputs.cache
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\obj\Debug\netcoreapp2.1\tennisSimulation.AssemblyInfoInputs.cache
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\obj\Debug\netcoreapp2.1\tennisSimulation.AssemblyInfo.cs
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\obj\Debug\netcoreapp2.1\tennisSimulation.dll
+C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\tennisSimulation\obj\Debug\netcoreapp2.1\tennisSimulation.pdb
