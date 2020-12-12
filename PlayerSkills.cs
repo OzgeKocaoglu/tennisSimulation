@@ -8,6 +8,7 @@ namespace tennisSimulation
     {
         private SkillSet skills;
         internal SkillSet SkillSet { get => skills; set => skills = value; }
+
         public PlayerSkills()
         {
             skills = new SkillSet();
