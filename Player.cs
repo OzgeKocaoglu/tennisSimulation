@@ -9,6 +9,9 @@ namespace Tennis_Simulation
     };
     class Player
     {
+        /// <summary>
+        /// Represents one player of all game.
+        /// </summary>
         #region Variables
         private int _id;
         private string playerHand = PlayerHand.right.ToString(); 

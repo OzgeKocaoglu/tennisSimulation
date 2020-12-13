@@ -4,19 +4,12 @@ using System.Collections.Generic;
 
 namespace Tennis_Simulation
 {
-    public enum TournamentTypes
-    {
-        elimination,
-        league
-    }
-
     class Tournament
     {
-        private int _id;
-        private string _surface;
-        private string _type = TournamentTypes.elimination.ToString();
-
-        public int id { get; set; }
+        /// <summary>
+        /// Represents one tournament at all tournaments
+        /// </summary>
+        public int _id { get; set; }
         public string surface { get; set; }
         public string type { get; set; }
         public List<List<Matchup>> Sets { get; set; } = new List<List<Matchup>>();

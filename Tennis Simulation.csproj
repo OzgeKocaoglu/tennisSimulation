@@ -52,6 +52,8 @@
     <Compile Include="Game.cs" />
     <Compile Include="GlobalVariables.cs" />
     <Compile Include="ITournament.cs" />
+    <Compile Include="Matchup.cs" />
+    <Compile Include="MatchupEntry.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerSkills.cs" />
     <Compile Include="Program.cs" />
