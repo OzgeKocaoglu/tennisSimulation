@@ -6,37 +6,17 @@ using Newtonsoft.Json.Linq;
 
 namespace tennisSimulation
 {
-    class Tournament
-    {
-        public int id { get; set; }
-        public string surface { get; set; }
-        public string type { get; set; }
-    }
-
-    class Model
-    {
-        public List<Tournament> tournaments { get; set; }
-        public List<Player> players { get; set; }
-    }
     class DataSerializer
     {
-        public void LoadJson(string _path)
-        {
-          
-           
 
+        public DataModel LoadJson(string _path)
+        {
             using (StreamReader r = new StreamReader(_path))
             {
                 string json = r.ReadToEnd();
                 //Console.WriteLine(json);
-                Model dataModel = JsonConvert.DeserializeObject<Model>(json);
-                for(int i = 0; i <dataModel.players.Count; i++)
-                {
-                    Console.WriteLine("PlayerID: " + dataModel.players[i].id + "\nPlayer Hand: " + dataModel.players[i].hand + "\nPlayer Experience: " + dataModel.players[i].experience + "\nPlayer Skills clay: " + dataModel.players[i].skills.clay);
-                    Console.WriteLine("---------------------------");
-                }
-               
-
+                DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(json);
+                return dataModel;
             }
         }
 
