@@ -13,6 +13,10 @@ namespace Tennis_Simulation
         /// </summary>
         public Player Competing { get; set; }
         public double Score { get; set; }
+
+        /// <summary>
+        /// Represents the matchup that this team came from as the winner. 
+        /// </summary>
         public Matchup ParentMatchup { get; set; }
 
     }
