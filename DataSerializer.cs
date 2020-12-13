@@ -32,7 +32,7 @@ namespace tennisSimulation
                 Model dataModel = JsonConvert.DeserializeObject<Model>(json);
                 for(int i = 0; i <dataModel.players.Count; i++)
                 {
-                    Console.WriteLine("PlayerID: " + dataModel.players[i].id + "\nPlayer Hand: " + dataModel.players[i].hand + "\nPlayer Experience: " + dataModel.players[i].experience);
+                    Console.WriteLine("PlayerID: " + dataModel.players[i].id + "\nPlayer Hand: " + dataModel.players[i].hand + "\nPlayer Experience: " + dataModel.players[i].experience + "\nPlayer Skills clay: " + dataModel.players[i].skills.clay);
                     Console.WriteLine("---------------------------");
                 }
                
