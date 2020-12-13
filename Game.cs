@@ -8,30 +8,21 @@ namespace tennisSimulation
     class Game
     {
        
-        // DataSerializer dataSerializer;
+        DataSerializer dataSerializer;
         private readonly string _path = @"C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\input.json";
 
-        public void LoadJson()
-        {
-            using (StreamReader r = new StreamReader(_path))
-            {
-                string json = r.ReadToEnd();
-                Console.WriteLine(json);
-               Player playerList =JsonConvert.DeserializeObject<Player>(json);
-                Console.WriteLine(playerList);
-            }
-        }
+       
 
         public Game()
         {
-            // dataSerializer = new DataSerializer();
+           dataSerializer = new DataSerializer();
         }
 
         public void CreateNewGame()
         {
             
             CreatePlayers();
-            LoadJson();
+            dataSerializer.LoadJson(_path);
         }
 
         //TO DO: JSON Dosyasından çek. 
