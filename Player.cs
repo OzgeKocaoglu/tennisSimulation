@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,7 +10,7 @@ namespace tennisSimulation
         right,
         left
     };
-
+    [JsonObject(MemberSerialization = MemberSerialization.OptIn)]
     class Player
     {
         #region Variables
@@ -20,9 +21,13 @@ namespace tennisSimulation
         #endregion
          
         #region Getter/Setters
+            [JsonProperty(PropertyName ="id")]
             public int id { get; set; }
-            public int experience { get; set; }
+            [JsonProperty(PropertyName = "hand")]
             public string hand { get; set; }
+            [JsonProperty(PropertyName = "experience")]
+            public int experience { get; set; }
+            [JsonProperty(PropertyName = "skills")]
             public PlayerSkills skills { get; set; }
         #endregion
 
