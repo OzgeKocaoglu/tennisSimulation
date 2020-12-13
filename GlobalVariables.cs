@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace tennisSimulation
+﻿
+namespace Tennis_Simulation
 {
-    static class GlobalVariables
+    class GlobalVariables
     {
         public static int SKILL_COUNT = 0;
         public static int PLAYER_COUNT = 0;

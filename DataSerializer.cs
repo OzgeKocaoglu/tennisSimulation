@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System;
+using System.IO;
 
-namespace tennisSimulation
+
+namespace Tennis_Simulation
 {
     class DataSerializer
     {
@@ -47,14 +47,14 @@ namespace tennisSimulation
                     jsonReader.Close();
                     streamReader.Close();
                 }
-                
+
             }
             catch (Exception ex)
             {
-               Console.WriteLine("Something went wrong with JSON: " + ex.Message.ToString());
+                Console.WriteLine("Something went wrong with JSON: " + ex.Message.ToString());
             }
             return obj.ToObject(dataType);
-           
+
         }
         #endregion
     }

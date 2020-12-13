@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace tennisSimulation
+namespace Tennis_Simulation
 {
     class SkillSet
     {
@@ -22,9 +20,9 @@ namespace tennisSimulation
         public List<Skill> GetSkills()
         {
             return skills;
-        
+
         }
 
-       
+
     }
 }

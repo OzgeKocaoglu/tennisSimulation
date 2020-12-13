@@ -1,19 +1,16 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;
 
-namespace tennisSimulation
+namespace Tennis_Simulation
 {
     class Game
     {
-       
         DataSerializer dataSerializer;
-        private readonly string _path = @"C:\Users\Özge Kocaoğlu\source\repos\tennisSimulation\input.json";
+        private readonly string _path = @"C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\input.json";
 
         public Game()
         {
-           dataSerializer = new DataSerializer();
+            dataSerializer = new DataSerializer();
         }
 
         public void CreateNewGame()
@@ -27,12 +24,12 @@ namespace tennisSimulation
             List<Player> players = dataModel.players;
             for (int i = 0; i < players.Count; i++)
             {
-                Console.WriteLine("PlayerID: " + players[i].id + "\nPlayer Hand: " + players[i].hand + "\nPlayer Experience: " + players[i].experience + "\nPlayer Skills " + "\nclay " +  players[i].skills.clay);
+                Console.WriteLine("PlayerID: " + players[i].id + "\nPlayer Hand: " + players[i].hand + "\nPlayer Experience: " + players[i].experience + "\nPlayer Skills " + "\nclay " + players[i].skills.clay);
                 Console.WriteLine("---------------------------");
             }
         }
 
 
-        
+
     }
 }
