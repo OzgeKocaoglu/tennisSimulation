@@ -1,18 +1,20 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Text;
+using System.IO;
 
 namespace tennisSimulation
 {
     class Game
     {
-        private List<Player> players;
-        public SkillSet skillSet;
+        public List<Player> players { get; set; }
+       // DataSerializer dataSerializer;
+      
+
 
         public Game()
         {
-            skillSet = new SkillSet();
-            skillSet.DisplaySkills();
+            // dataSerializer = new DataSerializer();
         }
 
         public void CreateNewGame()
@@ -24,15 +26,15 @@ namespace tennisSimulation
         //TO DO: JSON Dosyasından çek. 
         public void CreatePlayers()
         {
-            players.Add(new Player(Player.Hand.right, 0));
-            players.Add(new Player(Player.Hand.left, 5));
-            players.Add(new Player(Player.Hand.left, 10));
-            players.Add(new Player(Player.Hand.right, 15));
+            players.Add(new Player(Hand.right.ToString(), 0));
+            players.Add(new Player(Hand.left.ToString(), 5));
+            players.Add(new Player(Hand.left.ToString(), 10));
+            players.Add(new Player(Hand.right.ToString(), 15));
 
             for (int i = 0; i < players.Count; i++)
             {
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Player " + i + "\nID: " + players[i].ID + "\nHand side: " + players[i].PlayerHand + "\nExperience: " + players[i].Experience + "\nPlayer Skills: " + players[i].PlayerSkills.SkillSet.GetSkills()[0].Name + "\nValue: " + players[i].PlayerSkills.SkillSet.GetSkills()[0].Value);
+                Console.WriteLine("Player " + i + "\nID: " + players[i].id + "\nHand side: " + players[i].hand + "\nExperience: " + players[i].experience);
             }
 
         }

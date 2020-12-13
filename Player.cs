@@ -4,41 +4,45 @@ using System.Text;
 
 namespace tennisSimulation
 {
+    public enum Hand
+    {
+        right,
+        left
+    };
+
     class Player
     {
         #region Variables
-            public enum Hand
-            {
-                right,
-                left
-            };
-            private string id;
-            private Hand playerHand = Hand.right;
-            private int experience = 0;
+            private int _id;
+            private string playerHand = Hand.right.ToString();
+            private int _experience = 0;
             private PlayerSkills playerSkills;
         #endregion
-
+         
         #region Getter/Setters
-            internal string ID { get => id; private set => id = value; }
-            internal int Experience { get => experience; set => experience = value; }
-            internal Hand PlayerHand { get => playerHand; set => playerHand = value; }
-            internal PlayerSkills PlayerSkills { get => playerSkills; set => playerSkills = value; }
+            public int id { get; set; }
+            public int experience { get; set; }
+            public string hand { get; set; }
+            public PlayerSkills skills { get; set; }
         #endregion
 
-        public Player(Hand _hand, int _experience)
+        public Player(string _hand, int _experience)
         {
-            id = (++GlobalVariables.PLAYER_COUNT).ToString();
+            _id = ++GlobalVariables.PLAYER_COUNT;
             playerHand = _hand;
-            experience = _experience;
+            this._experience = _experience;
             playerSkills = new PlayerSkills();
         }
-        public Player(string _id, Hand _hand, int _experience)
+        public Player(int _id, string _hand, int _experience)
         {
-            id = _id;
+            this._id = _id;
             playerHand = _hand;
-            experience = _experience;
+            this._experience = _experience;
             playerSkills = new PlayerSkills();
         }
 
+        public Player()
+        {
+        }
     }
 }
