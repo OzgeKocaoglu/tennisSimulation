@@ -9,15 +9,31 @@ namespace Tennis_Simulation
     class DataSerializer
     {
 
-        public DataModel LoadJson(string _path)
+        public DataModel DeseriliazeJSON()
         {
-            using (StreamReader r = new StreamReader(_path))
+            DataModel dataModel;
+            try
             {
-                string json = r.ReadToEnd();
-                //Console.WriteLine(json);
-                DataModel dataModel = JsonConvert.DeserializeObject<DataModel>(json);
-                return dataModel;
+                if (File.Exists(GlobalVariables.INPUT_PATH))
+                {
+                    using (StreamReader r = new StreamReader(GlobalVariables.INPUT_PATH))
+                    {
+                        string json = r.ReadToEnd();
+                        dataModel = JsonConvert.DeserializeObject<DataModel>(json);
+                        return dataModel;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("We could not found the input file.\n To solve this:\n 1 - Go to GlobalVariables.cs file\n 2 - Copy your json file path inside of INPUT_PATH string.");
+                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Something went wrong with JSON: " + ex.Message.ToString());
+            }
+
+            return null;
         }
 
         #region JSON functions

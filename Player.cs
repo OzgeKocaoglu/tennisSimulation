@@ -11,7 +11,7 @@ namespace Tennis_Simulation
     {
         #region Variables
         private int _id;
-        private string playerHand = PlayerHand.right.ToString();
+        private string playerHand = PlayerHand.right.ToString(); 
         private int _experience = 0;
         private PlayerSkills playerSkills;
         #endregion

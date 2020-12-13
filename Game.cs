@@ -6,7 +6,6 @@ namespace Tennis_Simulation
     class Game
     {
         DataSerializer dataSerializer;
-        private readonly string _path = @"C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\input.json";
 
         public Game()
         {
@@ -15,8 +14,8 @@ namespace Tennis_Simulation
 
         public void CreateNewGame()
         {
-            DataModel dataModel = dataSerializer.LoadJson(_path);
-            GetPlayers(dataModel);
+            DataModel dataModel = dataSerializer.DeseriliazeJSON();
+            if(dataModel != null) GetPlayers(dataModel);
         }
 
         public void GetPlayers(DataModel dataModel)
