@@ -28,7 +28,6 @@ namespace Tennis_Simulation
 
             for(int i = 0; i <alltournaments.Count; i++)
             {
-                Console.WriteLine("Tournaments: \n");
                 alltournaments[i].StartTournament(players);
             }
            

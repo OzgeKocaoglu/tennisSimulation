@@ -19,7 +19,7 @@ namespace Tennis_Simulation
         /// </summary>
         public Matchup ParentMatchup { get; set; }
 
-        public MatchupEntry(double initialScore)
+        public MatchupEntry()
         {
         }
 
