@@ -10,35 +10,21 @@ namespace Tennis_Simulation
 {
     class TournamentController
     {
-        List<Tournament> tournaments;
         List<ITournament> alltournaments;
 
 
         public TournamentController(DataModel dataModel)
         {
-            tournaments = dataModel.tournaments;
-            alltournaments = new List<ITournament>();
+            alltournaments = TournamentConverter.ConvertTournaments(dataModel.tournaments);
+             
         }
-        public List<Tournament> GetTournaments()
+        public List<ITournament> GetTournaments()
         {
-            return tournaments;
+            return alltournaments;
         }
-
 
         public void StartTournaments(List<Player> players)
         {
-            for (int i = 0; i < tournaments.Count; i++)
-            {
-                if(tournaments[i].type == "elimination")
-                {
-                    alltournaments.Add(new EliminationTournament(tournaments[i].id, tournaments[i].surface, tournaments[i].type));
-                }
-                else if(tournaments[i].type == "league")
-                {
-                    alltournaments.Add(new LeagueTournament(tournaments[i].id, tournaments[i].surface, tournaments[i].type));
-                }
-
-            }
 
             for(int i = 0; i <alltournaments.Count; i++)
             {
@@ -47,6 +33,7 @@ namespace Tennis_Simulation
             }
            
         }
+
 
 
 
