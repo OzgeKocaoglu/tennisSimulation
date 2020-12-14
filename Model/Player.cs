@@ -12,12 +12,6 @@ namespace Tennis_Simulation
         /// <summary>
         /// Represents one player of all game.
         /// </summary>
-        #region Variables
-        private int _id;
-        private string playerHand = PlayerHand.right.ToString(); 
-        private int _experience = 0;
-        private PlayerSkills playerSkills;
-        #endregion
         #region Getter/Setters
         public int id { get; set; }
         public string hand { get; set; }
@@ -28,14 +22,6 @@ namespace Tennis_Simulation
         public Player()
         {
 
-        }
-
-        public Player(int _id, string _hand, int _experience)
-        {
-            this._id = _id;
-            playerHand = _hand;
-            this._experience = _experience;
-            playerSkills = new PlayerSkills();
         }
     }
 }

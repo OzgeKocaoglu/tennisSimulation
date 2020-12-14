@@ -6,6 +6,8 @@ namespace Tennis_Simulation
     class Game
     {
         DataSerializer dataSerializer;
+        PlayerController playerController;
+        TournamentController tournamentController;
 
         public Game()
         {
@@ -15,20 +17,15 @@ namespace Tennis_Simulation
         public void CreateNewGame()
         {
             DataModel dataModel = dataSerializer.DeseriliazeJSON();
-            if(dataModel != null) GetPlayers(dataModel);
+            playerController = new PlayerController(dataModel);
+            tournamentController = new TournamentController(dataModel);
+            StartGame();
         }
 
-        public void GetPlayers(DataModel dataModel)
+       public void StartGame()
         {
-            List<Player> players = dataModel.players;
-            for (int i = 0; i < players.Count; i++)
-            {
-                Console.WriteLine("PlayerID: " + players[i].id + "\nPlayer Hand: " + players[i].hand + "\nPlayer Experience: " + players[i].experience + "\nPlayer Skills " + "\nclay " + players[i].skills.clay);
-                Console.WriteLine("---------------------------");
-            }
+            tournamentController.StartTournaments(playerController.GetPlayers());
         }
-
-
 
     }
 }
