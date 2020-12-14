@@ -2,11 +2,6 @@
 
 namespace Tennis_Simulation
 {
-    public enum PlayerHand
-    {
-        right,
-        left
-    };
     class Player
     {
         /// <summary>

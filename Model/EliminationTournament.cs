@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tennis_Simulation
 {
     class EliminationTournament: Tournament, ITournament
     {
+        public EliminationTournament(int id, string surface, string type): base(id, surface, type)
+        {
+
+        }
+
         public List<List<Matchup>> Sets { get; set; }
 
         public void MatchPlayers()
         {
-            throw new NotImplementedException();
+          
         }
 
-        public void StartTournament()
+        public void StartTournament(List<Player> players)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Elimination Tournament is starting");
         }
     }
 }

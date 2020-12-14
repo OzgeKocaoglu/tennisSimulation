@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,14 @@ namespace Tennis_Simulation
     class TournamentController
     {
         List<Tournament> tournaments;
+        List<ITournament> alltournaments;
+
 
         public TournamentController(DataModel dataModel)
         {
             tournaments = dataModel.tournaments;
+            alltournaments = new List<ITournament>();
         }
-
         public List<Tournament> GetTournaments()
         {
             return tournaments;
@@ -24,12 +27,28 @@ namespace Tennis_Simulation
 
         public void StartTournaments(List<Player> players)
         {
-            for(int i = 0; i <tournaments.Count; i++)
+            for (int i = 0; i < tournaments.Count; i++)
             {
-                Console.WriteLine("Tournament " + i + " is starting.");
-                tournaments[i].StartTournament(players);
+                if(tournaments[i].type == "elimination")
+                {
+                    alltournaments.Add(new EliminationTournament(tournaments[i].id, tournaments[i].surface, tournaments[i].type));
+                }
+                else if(tournaments[i].type == "league")
+                {
+                    alltournaments.Add(new LeagueTournament(tournaments[i].id, tournaments[i].surface, tournaments[i].type));
+                }
+
             }
+
+            for(int i = 0; i <alltournaments.Count; i++)
+            {
+                Console.WriteLine("Tournaments: \n");
+                alltournaments[i].StartTournament(players);
+            }
+           
         }
+
+
 
     }
 }

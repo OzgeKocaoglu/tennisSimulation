@@ -8,16 +8,20 @@ namespace Tennis_Simulation
 {
     class LeagueTournament : Tournament, ITournament
     {
+        public LeagueTournament(int id, string surface, string type) : base(id, surface, type)
+        {
+
+        }
         public List<List<Matchup>> Sets { get; set; }
 
         public void MatchPlayers()
         {
-            throw new NotImplementedException();
+           
         }
 
-        public void StartTournament()
+        public void StartTournament(List<Player> players)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("League Tournament is starting");
         }
     }
 }

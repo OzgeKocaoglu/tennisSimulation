@@ -8,3 +8,5 @@ C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\Tennis Simulation\bin\De
 C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\Tennis Simulation\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\Tennis Simulation\obj\Debug\Tennis Simulation.csprojAssemblyReference.cache
 C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\Tennis Simulation\obj\Debug\Tennis Simulation.csproj.CopyComplete
+C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\Tennis Simulation\bin\Debug\AutoMapper.dll
+C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\Tennis Simulation\bin\Debug\AutoMapper.xml
