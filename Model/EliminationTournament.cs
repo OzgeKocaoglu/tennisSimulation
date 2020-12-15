@@ -18,7 +18,7 @@ namespace Tennis_Simulation
 
         public void StartTournament(List<Player> players)
         {
-            Console.WriteLine("Elimination Tournament is starting");
+            Console.WriteLine("Elimination Tournament is starting\n");
             eliminationTournamentPlayers = players;
             MatchPlayers();
             StartMatchs(Matchups);
@@ -26,7 +26,7 @@ namespace Tennis_Simulation
 
         private void MatchPlayers()
         {
-            Console.WriteLine("Matching players...");
+            Console.WriteLine("Matching players...\n");
             List<List<Player>> playerList = ListUtils.SettingUpPlayerList(eliminationTournamentPlayers);
             for (int i = 0; i < playerList.Count; i++)
             {
@@ -43,9 +43,9 @@ namespace Tennis_Simulation
             for(int i =0; i< matchups.Count; i++)
             {
                 int index = i + 1;
-                Console.WriteLine(this.id + ". Elimination Tournament and " + index + ". Match is starting...\n");
+                Console.WriteLine($"{this.id}. Elimination Tournament and {i+1} Match is starting...\n");
                 match = new Match();
-                match.StartMatch(matchups[i]);
+                match.StartMatch(matchups[i], this.surface);
                 
             }
             return player;

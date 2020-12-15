@@ -8,20 +8,35 @@ namespace Tennis_Simulation
 {
     class ScoreSystem
     {
-        int matchBonus = 1;
-        int handSideBonus = 2;
-        int highExperienceBonus = 3;
-        int surfaceBonus = 4;
+        #region Variables
+        List<IRule> rules = new List<IRule>();
+        int playerPoint = 0;
+        string tournamentSurface;
+        Player player;
+        Player oppositePlayer;
+        #endregion
 
-
-        public int addPointToPlayer(Player player, Player oppositeplayer)
+        public ScoreSystem(Player playerOne, Player playerTwo, string type)
         {
-            int playerPoint = 0;
-            playerPoint += matchBonus;
-            if (player.hand == "left") playerPoint += handSideBonus;
-            if (player.experience > oppositeplayer.experience) playerPoint += highExperienceBonus;
+            player = playerOne;
+            oppositePlayer = playerTwo;
+            tournamentSurface = type;
+            CreateRules();
+        }
+
+        public int addPointToPlayer()
+        {
 
             return playerPoint;
+        }
+
+        private void CreateRules()
+        {
+            rules.Add(new MatchRule("matchRule", 1));
+            rules.Add(new HandSideRule("handSideRule", 2));
+            rules.Add(new ExperienceRule("experienceRule", 3));
+            rules.Add(new SurfaceRule("surfaceRule", 4, tournamentSurface));
+
         }
     }
 }

@@ -8,19 +8,15 @@ namespace Tennis_Simulation
 {
     class Match
     {
-        public ScoreSystem scoreSystem { get; set; }
+        public ScoreSystem scoreSystem;
 
-        public Match()
-        {
-            scoreSystem = new ScoreSystem();
-        }
-        public void StartMatch(Matchup matchup)
-        {
 
+        public void StartMatch(Matchup matchup, string surface)
+        {
+            
             Player player1 = matchup.Entries[0].Competing;
             Player player2 = matchup.Entries[1].Competing;
-            matchup.Entries[0].Score = scoreSystem.addPointToPlayer(player1, player2);
-            matchup.Entries[1].Score = scoreSystem.addPointToPlayer(player2, player1);
+            scoreSystem = new ScoreSystem(player1, player2, surface);
             Console.Write("Competing 1 score is: " + matchup.Entries[0].Score + "\n");
             Console.Write("Competing 2 score is: " + matchup.Entries[1].Score + "\n");
 

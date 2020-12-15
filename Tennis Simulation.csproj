@@ -51,9 +51,15 @@
   <ItemGroup>
     <Compile Include="Controller\PlayerController.cs" />
     <Compile Include="Controller\TournamentController.cs" />
+    <Compile Include="Interface\IRule.cs" />
+    <Compile Include="Model\ExperienceRule.cs" />
+    <Compile Include="Model\HandSideRule.cs" />
     <Compile Include="Model\Match.cs" />
     <Compile Include="Model\DataModel.cs" />
     <Compile Include="Controller\ScoreSystem.cs" />
+    <Compile Include="Model\MatchRule.cs" />
+    <Compile Include="Model\Rule.cs" />
+    <Compile Include="Model\SurfaceRule.cs" />
     <Compile Include="Utils\DataSerializer.cs" />
     <Compile Include="Model\EliminationTournament.cs" />
     <Compile Include="Game.cs" />
