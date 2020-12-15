@@ -16,5 +16,17 @@ namespace Tennis_Simulation
 
             return list;
         }
+        public static List<List<Player>> SettingUpPlayerList(List<Player> players)
+        {
+            if ((players.Count % 2) != 0)
+            {
+                Console.WriteLine("Player number is not valid. So we decided to remove last player from the list.");
+                players.RemoveAt(players.Count - 1);
+            }
+            List<List<Player>> dividedPlayers = ListUtils.splitList(players, 2);
+            return dividedPlayers;
+        }
     }
+
+
 }
