@@ -14,9 +14,5 @@ namespace Tennis_Simulation
         public List<MatchupEntry> Entries = new List<MatchupEntry>();
         public Player Winner { get; set; }
 
-        /// <summary>
-        /// Set sayısı.
-        /// </summary>
-        public int MatchupSet { get; set; }
     }
 }

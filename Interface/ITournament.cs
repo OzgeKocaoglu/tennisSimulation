@@ -5,7 +5,7 @@ namespace Tennis_Simulation
 {
     interface ITournament
     {
-        List<List<Matchup>> Sets { get; set; }
+        List<Matchup> Matchups { get; set; }
         void StartTournament(List<Player> players);
     }
 }

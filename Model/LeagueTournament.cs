@@ -12,7 +12,8 @@ namespace Tennis_Simulation
         {
 
         }
-        public List<List<Matchup>> Sets { get; set; }
+
+        public List<Matchup> Matchups { get; set; }
 
         public void MatchPlayers()
         {
