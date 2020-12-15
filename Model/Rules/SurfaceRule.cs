@@ -17,7 +17,35 @@ namespace Tennis_Simulation
 
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
-            return 0;
+            if (surfaceType.Contains("clay"))
+            {
+                if(playerOne.skills.clay > playerTwo.skills.clay)
+                {
+                    playerOneScore += this.bonus;
+                    Console.WriteLine($"Surface bonus added to player {playerOne.id}. Current point is: {playerOneScore}");
+                    return playerOneScore;
+                }
+            }
+            else if (surfaceType.Contains("grass"))
+            {
+                if (playerOne.skills.grass > playerTwo.skills.grass)
+                {
+                    playerOneScore += this.bonus;
+                    Console.WriteLine($"Surface bonus added to player {playerOne.id}. Current point is: {playerOneScore}");
+                    return playerOneScore;
+                }
+            }
+            else if (surfaceType.Contains("hard"))
+            {
+                if (playerOne.skills.hard > playerTwo.skills.hard)
+                {
+                    playerOneScore += this.bonus;
+                    Console.WriteLine($"Surface bonus added to player {playerOne.id}. Current point is: {playerOneScore}");
+                    return playerOneScore;
+                }
+            }
+
+            return playerOneScore;
         }
 
         
