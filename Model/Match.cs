@@ -17,8 +17,11 @@ namespace Tennis_Simulation
             Player player1 = matchup.Entries[0].Competing;
             Player player2 = matchup.Entries[1].Competing;
             scoreSystem = new ScoreSystem(player1, player2, surface);
-            Console.Write("Competing 1 score is: " + matchup.Entries[0].Score + "\n");
-            Console.Write("Competing 2 score is: " + matchup.Entries[1].Score + "\n");
+            int playerOneScore = scoreSystem.addPointToPlayer();
+            scoreSystem = new ScoreSystem(player2, player1, surface);
+            int playerTwoScore = scoreSystem.addPointToPlayer();
+            Console.Write("Competing 1 score is: " + playerOneScore + "\n");
+            Console.Write("Competing 2 score is: " + playerTwoScore + "\n");
 
         }
 

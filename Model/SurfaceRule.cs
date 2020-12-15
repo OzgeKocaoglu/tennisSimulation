@@ -17,7 +17,7 @@ namespace Tennis_Simulation
 
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
         

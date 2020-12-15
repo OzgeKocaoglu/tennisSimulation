@@ -26,7 +26,10 @@ namespace Tennis_Simulation
 
         public int addPointToPlayer()
         {
-
+            for(int i=0; i<rules.Count; i++)
+            {
+                playerPoint = rules[i].applyRule(player, oppositePlayer, playerPoint);
+            }
             return playerPoint;
         }
 
@@ -35,7 +38,7 @@ namespace Tennis_Simulation
             rules.Add(new MatchRule("matchRule", 1));
             rules.Add(new HandSideRule("handSideRule", 2));
             rules.Add(new ExperienceRule("experienceRule", 3));
-            rules.Add(new SurfaceRule("surfaceRule", 4, tournamentSurface));
+            //rules.Add(new SurfaceRule("surfaceRule", 4, tournamentSurface));
 
         }
     }
