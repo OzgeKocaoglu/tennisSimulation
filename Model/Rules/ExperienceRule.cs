@@ -19,7 +19,11 @@ namespace Tennis_Simulation
 
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
-            if (playerOne.experience > playerTwo.experience) playerOneScore += this.bonus;
+            if (playerOne.experience > playerTwo.experience) {
+                playerOneScore += this.bonus;
+                Console.WriteLine($"Experience bonus added to player {playerOne.id}. Current point is: {playerOneScore}");
+            };
+           
             return playerOneScore;
         }
     }

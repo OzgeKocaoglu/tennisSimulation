@@ -1,13 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Tennis_Simulation
 {
-    class HandSideRule : IRule
+    class MatchRule : IRule
     {
         public string name { get; set; }
         public int bonus { get; set; }
 
-        public HandSideRule(string name, int bonus)
+        public MatchRule(string name, int bonus)
         {
             this.name = name;
             this.bonus = bonus;
@@ -15,13 +19,9 @@ namespace Tennis_Simulation
 
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
-            if (playerOne.hand == "left")
-            {
-                playerOneScore += bonus;
-            }
-
+           playerOneScore += this.bonus;
+           Console.WriteLine($"Matching bonus added to player {playerOne.id}. Current point is: {playerOneScore}");
             return playerOneScore;
         }
     }
 }
-
