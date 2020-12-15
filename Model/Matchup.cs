@@ -14,5 +14,15 @@ namespace Tennis_Simulation
         public List<MatchupEntry> Entries = new List<MatchupEntry>();
         public Player Winner { get; set; }
 
+        public Matchup(List<Player> players)
+        {
+            for (int i = 0; i < players.Count; i++)
+            {
+                MatchupEntry entry = new MatchupEntry();
+                entry.Competing = players[i];
+                Entries.Add(entry);
+            }
+        }
+
     }
 }

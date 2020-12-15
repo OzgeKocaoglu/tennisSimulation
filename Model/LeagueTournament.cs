@@ -20,6 +20,11 @@ namespace Tennis_Simulation
            
         }
 
+        public void StartMatch(Matchup matchup)
+        {
+            
+        }
+
         public void StartTournament(List<Player> players)
         {
             Console.WriteLine("League Tournament is starting");

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Tennis_Simulation
 {
-    internal class EliminationTournament: Tournament, ITournament
+    class EliminationTournament: Tournament, ITournament
     {
         #region Variables
         public List<Matchup> Matchups { get; set; }
@@ -20,6 +20,7 @@ namespace Tennis_Simulation
             Console.WriteLine("Elimination Tournament is starting");
             eliminationTournamentPlayers = players;
             MatchPlayers();
+            StartMatchs(Matchups);
         }
 
         #region Matching Functions
@@ -28,26 +29,22 @@ namespace Tennis_Simulation
             Console.WriteLine("Matching players...");
             for (int i = 0; i<SettingUpPlayerList().Count; i++)
             {
-                SetInitialMatchUp(SettingUpPlayerList()[i]);
+                Matchup matchup = new Matchup(SettingUpPlayerList()[i]);
+                Matchups.Add(matchup);
             }
 
-        }
-        void SetInitialMatchUp(List<Player> players)
-        {
-            List<MatchupEntry> entries = new List<MatchupEntry>();
-            Matchup matchup = new Matchup();
-
-            for(int i=0; i<players.Count; i++)
+            for(int i=0; i< Matchups.Count; i++)
             {
-                MatchupEntry entry = new MatchupEntry();
-                entry.Competing = players[i];
-                entries.Add(entry);
+                for (int j = 0; j < Matchups[i].Entries.Count; j++)
+                    Console.WriteLine("Matchup: " + i + "Player 1: " + Matchups[i].Entries[j].Competing.id);
             }
-            matchup.Entries = entries;
-            Matchups.Add(matchup);
 
         }
         #endregion
+
+        /// <summary>
+        /// Takes player list and correct player list count for 2^n and split lists.
+        /// </summary>
         List<List<Player>> SettingUpPlayerList()
         {
             if ((eliminationTournamentPlayers.Count % 2) != 0)
@@ -59,5 +56,21 @@ namespace Tennis_Simulation
             return dividedPlayers;
         }
 
+        private List<Player> StartMatchs(List<Matchup> matchups)
+        {
+            List<Player> player = new List<Player>();
+            Match match;
+            for(int i =0; i< matchups.Count; i++)
+            {
+                int index = i + 1;
+                Console.WriteLine(this.id + ". Elimination Tournament and " + index + ". Match is starting...\n");
+                match = new Match();
+                match.StartMatch(matchups[i]);
+                
+            }
+            return player;
+        }
+
+ 
     }
 }
