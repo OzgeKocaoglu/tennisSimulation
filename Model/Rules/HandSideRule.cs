@@ -12,7 +12,6 @@ namespace Tennis_Simulation
             this.name = name;
             this.bonus = bonus;
         }
-
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
             if (playerOne.hand == "left")

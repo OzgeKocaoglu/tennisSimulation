@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Tennis_Simulation.Controller;
 
 namespace Tennis_Simulation
 {
@@ -8,6 +7,7 @@ namespace Tennis_Simulation
         DataSerializer dataSerializer;
         PlayerController playerController;
         TournamentController tournamentController;
+        OrderController orderController;
 
         public Game()
         {

@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Tennis_Simulation
 {
+    /// <summary>
+    /// Represents one mathup at the all tournament.
+    /// </summary>
     class Matchup
     {
-        /// <summary>
-        /// Represents one mathup at the all tournament.
-        /// </summary>
         public List<MatchupEntry> Entries = new List<MatchupEntry>();
         public Player Winner { get; set; }
 

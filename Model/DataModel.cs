@@ -2,11 +2,11 @@
 
 namespace Tennis_Simulation
 {
+    /// <summary>
+    /// DataModel from input JSON file.
+    /// </summary>
     class DataModel
     {
-        /// <summary>
-        /// DataModel from JSON file.
-        /// </summary>
         public List<Tournament> tournaments { get; set; }
         public List<Player> players { get; set; }
     }

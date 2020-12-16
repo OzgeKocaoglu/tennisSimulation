@@ -26,7 +26,7 @@ namespace Tennis_Simulation
                 List<Player> winnerList = StartMatchs(Rounds[i]);
                 for (int j = 0; j < winnerList.Count; j++)
                 {
-                    Console.WriteLine($"Winner list\n : {winnerList[j].id} \n ");
+                    Console.WriteLine($"Round: {i+1} \n Winner list\n : {winnerList[j].id} ");
                 }
                 if(winnerList.Count != 1)
                 {

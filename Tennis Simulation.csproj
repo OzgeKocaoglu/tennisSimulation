@@ -49,9 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\OrderController.cs" />
     <Compile Include="Controller\PlayerController.cs" />
     <Compile Include="Controller\TournamentController.cs" />
     <Compile Include="Interface\IRule.cs" />
+    <Compile Include="Model\Order.cs" />
     <Compile Include="Model\Rules\ExperienceRule.cs" />
     <Compile Include="Model\Rules\HandSideRule.cs" />
     <Compile Include="Model\Match.cs" />

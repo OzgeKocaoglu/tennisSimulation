@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tennis_Simulation
 {
@@ -16,7 +12,6 @@ namespace Tennis_Simulation
             this.name = name;
             this.bonus = bonus;
         }
-
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
             if (playerOne.experience > playerTwo.experience) {

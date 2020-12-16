@@ -1,12 +1,11 @@
-﻿using Newtonsoft.Json;
-
+﻿
 namespace Tennis_Simulation
 {
+    /// <summary>
+    /// Represents one player of all game.
+    /// </summary>
     class Player
     {
-        /// <summary>
-        /// Represents one player of all game.
-        /// </summary>
         #region Getter/Setters
         public int id { get; set; }
         public string hand { get; set; }

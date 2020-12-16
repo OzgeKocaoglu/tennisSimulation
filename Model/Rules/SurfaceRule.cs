@@ -14,7 +14,6 @@ namespace Tennis_Simulation
             this.bonus = bonus;
             surfaceType = type;
         }
-
         public int applyRule(Player playerOne, Player playerTwo, int playerOneScore)
         {
             if (surfaceType.Contains("clay"))
@@ -48,6 +47,5 @@ namespace Tennis_Simulation
             return playerOneScore;
         }
 
-        
     }
 }
