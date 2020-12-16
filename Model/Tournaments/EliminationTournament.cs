@@ -64,8 +64,6 @@ namespace Tennis_Simulation
                 Console.WriteLine($"{this.id}. Elimination Tournament and {i+1} Match is starting...\n");
                 match = new Match();
                 match.StartMatch(matchups[i], this.surface);
-                //Add Experience to elimination Tournament players
-                //Add player list to elimination tournament players
                 AddExperiences(match.Winner, match.Loser);
                 player.Add(SetWinnerPlayer(matchups[i]));
                 
@@ -75,7 +73,6 @@ namespace Tennis_Simulation
 
         private void AddExperiences(Player winner, Player loser)
         {
-
             for (int i=0; i<eliminationTournamentPlayers.Count; i++)
             {
                 if(eliminationTournamentPlayers[i] == winner)
@@ -84,9 +81,12 @@ namespace Tennis_Simulation
                     eliminationTournamentPlayers[i].experience += 20;
                     Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu son deneyim puanı: {eliminationTournamentPlayers[i].experience}");
                 }
-
-                //ADD LOSER PLAYER POINTS
-               
+                else if(eliminationTournamentPlayers[i] == loser)
+                {
+                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu ilk deneyim puanı: {eliminationTournamentPlayers[i].experience}");
+                    eliminationTournamentPlayers[i].experience += 10;
+                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu son deneyim puanı: {eliminationTournamentPlayers[i].experience}");
+                }
             }
             
         }
