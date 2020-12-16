@@ -7,44 +7,54 @@ namespace Tennis_Simulation
     {
         #region Variables
         public List<List<Matchup>> Rounds;
-        public List<Matchup> Matchups { get; set; }
         private List<Player> eliminationTournamentPlayers { get; set; }
         #endregion
 
         public EliminationTournament(int id, string surface, string type): base(id, surface, type)
         {
-            Matchups = new List<Matchup>();
             Rounds = new List<List<Matchup>>();
-            Rounds.Add(Matchups);
             eliminationTournamentPlayers = new List<Player>();
         }
 
         public void StartTournament(List<Player> players)
         {
             Console.WriteLine("Elimination Tournament is starting\n");
-            
-            for(int i=0; i< Rounds.Count; i++)
+            eliminationTournamentPlayers = players;
+            MatchPlayers(eliminationTournamentPlayers);
+            for(int i =0; i< Rounds.Count; i++)
             {
-                Console.WriteLine($"Round {i+1} is starting ");
-                eliminationTournamentPlayers = players;
-                MatchPlayers(eliminationTournamentPlayers);
-                StartMatchs(Matchups);
+                List<Player> winnerList = StartMatchs(Rounds[i]);
+                for (int j = 0; j < winnerList.Count; j++)
+                {
+                    Console.WriteLine($"Winner list\n : {winnerList[j].id} \n ");
+                }
+                if(winnerList.Count != 1)
+                {
+                    MatchPlayers(winnerList);
+                }
+                
             }
-           
+            
+
         }
 
-        private void MatchPlayers(List<Player> players)
+
+       private void MatchPlayers(List<Player> players)
         {
             Console.WriteLine("Matching players...\n");
+            List<Matchup> Matchups = new List<Matchup>();
             List<List<Player>> playerList = ListUtils.SettingUpPlayerList(players);
             for (int i = 0; i < playerList.Count; i++)
             {
                 Matchup matchup = new Matchup(playerList[i]);
                 Matchups.Add(matchup);
+               
             }
+            Rounds.Add(Matchups);
 
         }
 
+      
         private List<Player> StartMatchs(List<Matchup> matchups)
         {
             List<Player> player = new List<Player>();
@@ -54,8 +64,8 @@ namespace Tennis_Simulation
                 Console.WriteLine($"{this.id}. Elimination Tournament and {i+1} Match is starting...\n");
                 match = new Match();
                 match.StartMatch(matchups[i], this.surface);
-                AddExperiences(match.GetWinner(), matchups[i]);
-                //TODO: GET THE WİNNER LIST AND MAKE THEM PROCESS AGAIN.
+                AddExperiences(matchups[i].Winner, matchups[i]);
+                player.Add(matchups[i].Winner);
                 
             }
             return player;
@@ -67,19 +77,21 @@ namespace Tennis_Simulation
             {
                 matchup.Entries[0].Competing.experience += 20;
                 matchup.Entries[1].Competing.experience += 10;
-                Console.WriteLine($"Player:{matchup.Entries[0].Competing.id} and Experience is {matchup.Entries[0].Competing.experience}");
-                Console.WriteLine($"Player:{matchup.Entries[1].Competing.id} and Experience is {matchup.Entries[1].Competing.experience}");
-            }
+                }
+               
             else
             {
                 matchup.Entries[1].Competing.experience += 20;
                 matchup.Entries[0].Competing.experience += 10;
-                Console.WriteLine($"Player:{matchup.Entries[0].Competing.id} and Experience is {matchup.Entries[0].Competing.experience}");
-                Console.WriteLine($"Player:{matchup.Entries[1].Competing.id} and Experience is {matchup.Entries[1].Competing.experience}");
+               
             }
             
         }
 
- 
+
+
+
+       
+
     }
 }

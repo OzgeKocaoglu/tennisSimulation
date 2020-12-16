@@ -9,7 +9,6 @@ namespace Tennis_Simulation
     class Match
     {
         public ScoreSystem scoreSystem;
-        public Player Winner;
 
         public void StartMatch(Matchup matchup, string surface)
         {
@@ -24,7 +23,7 @@ namespace Tennis_Simulation
 
             Console.Write("Competing 1 score is: " + matchup.Entries[0].Score + "\n");
             Console.Write("Competing 2 score is: " + matchup.Entries[1].Score + "\n");
-            Winner = CalculateWinner(matchup.Entries[0], matchup.Entries[1]);
+            matchup.Winner = CalculateWinner(matchup.Entries[0], matchup.Entries[1]);
         }
 
         public Player CalculateWinner(MatchupEntry playerOne, MatchupEntry playerTwo)
@@ -44,11 +43,6 @@ namespace Tennis_Simulation
                 Console.WriteLine($"Winner is: Player {playerTwo.Competing.id}");
                 return playerTwo.Competing;
             }
-        }
-
-        public Player GetWinner()
-        {
-            return Winner;
         }
 
 

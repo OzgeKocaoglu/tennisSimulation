@@ -61,11 +61,11 @@
     <Compile Include="Model\Rule.cs" />
     <Compile Include="Model\Rules\SurfaceRule.cs" />
     <Compile Include="Utils\DataSerializer.cs" />
-    <Compile Include="Model\EliminationTournament.cs" />
+    <Compile Include="Model\Tournaments\EliminationTournament.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Utils\GlobalVariables.cs" />
     <Compile Include="Interface\ITournament.cs" />
-    <Compile Include="Model\LeagueTournament.cs" />
+    <Compile Include="Model\Tournaments\LeagueTournament.cs" />
     <Compile Include="Model\Matchup.cs" />
     <Compile Include="Model\MatchupEntry.cs" />
     <Compile Include="Model\Player.cs" />

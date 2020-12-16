@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,5 +46,22 @@ namespace Tennis_Simulation
             //MatchPlayers(leagueTournamentPlayers);
             //StartMatchs(Matchups);
         }
+
+
+        #region Utility Methods
+        private RNGCryptoServiceProvider Rand = new RNGCryptoServiceProvider();
+        private int RandomInteger(int min, int max)
+        {
+            uint scale = uint.MaxValue;
+            while (scale == uint.MaxValue)
+            {
+                byte[] four_bytes = new byte[4];
+                Rand.GetBytes(four_bytes);
+                scale = BitConverter.ToUInt32(four_bytes, 0);
+            }
+
+            return (int)(min + (max - min) * (scale / (double)uint.MaxValue));
+        }
+        #endregion
     }
 }
