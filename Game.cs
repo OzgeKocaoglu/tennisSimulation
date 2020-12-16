@@ -19,6 +19,8 @@ namespace Tennis_Simulation
             DataModel dataModel = dataSerializer.DeseriliazeJSON();
             playerController = new PlayerController(dataModel);
             tournamentController = new TournamentController(dataModel);
+            orderController = new OrderController();
+            //orderController.OrderPlayers(tournamentController.GetTournamentPlayers()) 
             StartGame();
         }
 

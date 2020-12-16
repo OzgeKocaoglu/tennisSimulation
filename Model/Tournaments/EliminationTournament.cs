@@ -16,7 +16,7 @@ namespace Tennis_Simulation
             eliminationTournamentPlayers = new List<Player>();
         }
 
-        public void StartTournament(List<Player> players)
+        public List<Player> StartTournament(List<Player> players)
         {
             Console.WriteLine("Elimination Tournament is starting\n");
             eliminationTournamentPlayers = players;
@@ -34,7 +34,7 @@ namespace Tennis_Simulation
                 }
                 
             }
-            
+            return eliminationTournamentPlayers;
 
         }
 
@@ -64,31 +64,59 @@ namespace Tennis_Simulation
                 Console.WriteLine($"{this.id}. Elimination Tournament and {i+1} Match is starting...\n");
                 match = new Match();
                 match.StartMatch(matchups[i], this.surface);
-                AddExperiences(matchups[i].Winner, matchups[i]);
-                player.Add(matchups[i].Winner);
+                //Add Experience to elimination Tournament players
+                //Add player list to elimination tournament players
+                AddExperiences(match.Winner, match.Loser);
+                player.Add(SetWinnerPlayer(matchups[i]));
                 
             }
             return player;
         }
 
-        private void AddExperiences (Player winner, Matchup matchup)
+        private void AddExperiences(Player winner, Player loser)
         {
-            if(matchup.Entries[0].Competing == winner)
+
+            for (int i=0; i<eliminationTournamentPlayers.Count; i++)
             {
-                matchup.Entries[0].Competing.experience += 20;
-                matchup.Entries[1].Competing.experience += 10;
+                if(eliminationTournamentPlayers[i] == winner)
+                {
+                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu ilk deneyim puanı: {eliminationTournamentPlayers[i].experience}");
+                    eliminationTournamentPlayers[i].experience += 20;
+                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu son deneyim puanı: {eliminationTournamentPlayers[i].experience}");
                 }
-               
-            else
-            {
-                matchup.Entries[1].Competing.experience += 20;
-                matchup.Entries[0].Competing.experience += 10;
+
+                //ADD LOSER PLAYER POINTS
                
             }
             
         }
 
+        public Player SetWinnerPlayer(Matchup matchup)
+        {
+            Player winnerPlayer = new Player();
+            Console.WriteLine($"Matchup winner is {matchup.Winner}");
+            for (int i=0; i< eliminationTournamentPlayers.Count; i++)
+            {
+                if(matchup.Entries[0].Competing == matchup.Winner)
+                {
+                    if (matchup.Entries[0].Competing.id == eliminationTournamentPlayers[i].id)
+                    {
+                        Console.WriteLine($"Elimination players winner is {eliminationTournamentPlayers[i].id}");
+                        return eliminationTournamentPlayers[i];
+                    }
+                }
+                else
+                {
+                    if(matchup.Entries[1].Competing.id == eliminationTournamentPlayers[i].id)
+                    {
+                        Console.WriteLine($"Elimination players winner is {eliminationTournamentPlayers[i].id}");
+                        return eliminationTournamentPlayers[i];
+                    }
+                }
+            }
+            return winnerPlayer;
 
+        }
 
 
        

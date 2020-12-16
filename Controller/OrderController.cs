@@ -7,5 +7,15 @@ namespace Tennis_Simulation.Controller
     {
         List<Order> orders;
 
+        public OrderController()
+        {
+            orders = new List<Order>();
+        }
+
+        public List<Order> OrderPlayers(List<Player> players)
+        {
+            return orders;
+        }
+
     }
 }

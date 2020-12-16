@@ -5,6 +5,8 @@ namespace Tennis_Simulation
     class Match
     {
         public ScoreSystem scoreSystem;
+        public Player Winner;
+        public Player Loser;
 
         public void StartMatch(Matchup matchup, string surface)
         {
@@ -19,10 +21,11 @@ namespace Tennis_Simulation
 
             Console.Write("Competing 1 score is: " + matchup.Entries[0].Score + "\n");
             Console.Write("Competing 2 score is: " + matchup.Entries[1].Score + "\n");
-            matchup.Winner = CalculateWinner(matchup.Entries[0], matchup.Entries[1]);
+
+            CalculateWinner(matchup.Entries[0], matchup.Entries[1]);
         }
 
-        public Player CalculateWinner(MatchupEntry playerOne, MatchupEntry playerTwo)
+        public void CalculateWinner(MatchupEntry playerOne, MatchupEntry playerTwo)
         {
             double sum = playerOne.Score + playerTwo.Score;
             double playerOneWinProbability = playerOne.Score / sum;
@@ -32,12 +35,14 @@ namespace Tennis_Simulation
             if (playerOneWinProbability > playerTwoWinProbability)
             {
                 Console.WriteLine($"Winner is: Player {playerOne.Competing.id}");
-                return playerOne.Competing;
+                Winner = playerOne.Competing;
+                Loser = playerTwo.Competing;
             }
             else
             {
                 Console.WriteLine($"Winner is: Player {playerTwo.Competing.id}");
-                return playerTwo.Competing;
+                Winner = playerTwo.Competing;
+                Loser = playerOne.Competing;
             }
         }
 

@@ -37,12 +37,13 @@ namespace Tennis_Simulation
             return player;
         }
 
-        public void StartTournament(List<Player> players)
+        public List<Player> StartTournament(List<Player> players)
         {
             Console.WriteLine("League Tournament is starting\n");
             leagueTournamentPlayers = players;
             //MatchPlayers(leagueTournamentPlayers);
             //StartMatchs(Matchups);
+            return leagueTournamentPlayers;
         }
 
 

@@ -5,6 +5,6 @@ namespace Tennis_Simulation
 {
     interface ITournament
     {
-        void StartTournament(List<Player> players);
+        List<Player> StartTournament(List<Player> players);
     }
 }
