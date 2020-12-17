@@ -20,7 +20,7 @@ namespace Tennis_Simulation
             leagueTournamentPlayers = players;
             MatchPlayers(leagueTournamentPlayers);
             Console.WriteLine($"Matchup count is : {Matchups.Count}");
-            //StartMatchs(Matchups);
+            StartMatchs(Matchups);
             return leagueTournamentPlayers;
         }
 
@@ -28,8 +28,6 @@ namespace Tennis_Simulation
         public void MatchPlayers(List<Player> players)
         {
             Console.WriteLine("Matching players...\n");
-            //Match one player with all players
-            //Do this for all players
             for(int i = 0; i< players.Count; i++)
             {
                 for(int j = i+1; j < players.Count; j++)
@@ -42,39 +40,23 @@ namespace Tennis_Simulation
                     Matchups.Add(matchup);
                 }
             }
+            Matchups.Shuffle();
         }
 
         private List<Player> StartMatchs(List<Matchup> matchups)
         {
             List<Player> player = new List<Player>();
-            Match match;
-            for (int i = 0; i < matchups.Count; i++)
+            for(int i= 0; i< matchups.Count; i++)
             {
-                //Start all matchups randomize. 
-                Console.WriteLine($"{this.id}. League Tournament and {i + 1} Match is starting...\n");
+                Console.WriteLine($"{this.id}. League Tournament and Match is starting...\n");
+                Match match;
                 match = new Match();
                 match.StartMatch(matchups[i], this.surface);
-
+                
             }
             return player;
         }
 
-    
-
-        #region Utility Methods
-        private RNGCryptoServiceProvider Rand = new RNGCryptoServiceProvider();
-        private int RandomInteger(int min, int max)
-        {
-            uint scale = uint.MaxValue;
-            while (scale == uint.MaxValue)
-            {
-                byte[] four_bytes = new byte[4];
-                Rand.GetBytes(four_bytes);
-                scale = BitConverter.ToUInt32(four_bytes, 0);
-            }
-
-            return (int)(min + (max - min) * (scale / (double)uint.MaxValue));
-        }
-        #endregion
+     
     }
 }
