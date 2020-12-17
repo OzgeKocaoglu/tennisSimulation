@@ -20,13 +20,13 @@ namespace Tennis_Simulation
             playerController = new PlayerController(dataModel);
             tournamentController = new TournamentController(dataModel);
             orderController = new OrderController();
-            //orderController.OrderPlayers(tournamentController.GetTournamentPlayers()) 
             StartGame();
         }
 
        public void StartGame()
         {
             tournamentController.StartTournaments(playerController.GetPlayers());
+            orderController.OrderPlayers(tournamentController.GetTournamentResultPlayers(), playerController.GetPlayers());
         }
 
     }
