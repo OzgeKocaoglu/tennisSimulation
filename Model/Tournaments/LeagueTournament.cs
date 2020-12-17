@@ -52,11 +52,27 @@ namespace Tennis_Simulation
                 Match match;
                 match = new Match();
                 match.StartMatch(matchups[i], this.surface);
-                
+                AddExperiences(match.Winner, match.Loser);
+
             }
             return player;
         }
 
-     
+        private void AddExperiences(Player winner, Player loser)
+        {
+            for (int i = 0; i < leagueTournamentPlayers.Count; i++)
+            {
+                if (leagueTournamentPlayers[i] == winner)
+                {
+                    leagueTournamentPlayers[i].experience += 10;
+                }
+                else if (leagueTournamentPlayers[i] == loser)
+                {
+                    leagueTournamentPlayers[i].experience += 1;
+                }
+            }
+
+        }
+
     }
 }
