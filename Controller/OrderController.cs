@@ -18,14 +18,14 @@ namespace Tennis_Simulation.Controller
             for (int i=0; i< players.Count; i++)
             {
 
-                  int totalExperience = players[i].gainedExperience - players[i].experience;
+                  int totalExperience = players[i].gainedExperience + players[i].experience;
                   Order order = new Order(i + 1, players[i].id, players[i].gainedExperience, totalExperience);
                   orders.Add(order);
             }
             Console.WriteLine("-------------------Order players------------------\n");
             SortPlayerList(orders);
             for (int i = 0; i < orders.Count; i++)
-                Console.WriteLine($"{orders[i].id}. => Player {orders[i].player_id} Experience => {orders[i].total_experience}");
+                Console.WriteLine($"{orders[i].id}. => Player {orders[i].player_id} Experience => {orders[i].total_experience}, gained Experience => {orders[i].gained_experience}");
             return orders;
         }
         private void SortPlayerList(List<Order> orders)
@@ -38,7 +38,7 @@ namespace Tennis_Simulation.Controller
               );
             for(int i=0; i<orders.Count; i++)
             {
-                orders[i].id = i;
+                orders[i].id = i+1;
             }
         }
         public List<Order> GetOrders()

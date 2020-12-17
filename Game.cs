@@ -26,14 +26,14 @@ namespace Tennis_Simulation
             tournamentController = new TournamentController(dataModel);
             orderController = new OrderController();
             StartGame();
-            OrderResults();
+            DisplayResults();
         }
         public void StartGame()
         {
             tournamentController.StartTournaments(playerController.GetPlayers());
            
         }
-        public void OrderResults()
+        public void DisplayResults()
         {
             orderController.OrderPlayers(playerController.GetPlayers());
             dataSerializer.SeriliazeJSON(orderController.GetOrders());
