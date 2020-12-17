@@ -36,6 +36,7 @@ namespace Tennis_Simulation
         public void OrderResults()
         {
             orderController.OrderPlayers(playerController.GetPlayers());
+            dataSerializer.SeriliazeJSON(orderController.GetOrders());
         }
 
     }

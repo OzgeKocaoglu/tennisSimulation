@@ -60,7 +60,6 @@
     <Compile Include="Model\DataModel.cs" />
     <Compile Include="Controller\ScoreSystem.cs" />
     <Compile Include="Model\Rules\MatchRule.cs" />
-    <Compile Include="Model\Rule.cs" />
     <Compile Include="Model\Rules\SurfaceRule.cs" />
     <Compile Include="Utils\DataSerializer.cs" />
     <Compile Include="Model\Tournaments\EliminationTournament.cs" />

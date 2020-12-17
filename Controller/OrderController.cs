@@ -28,7 +28,6 @@ namespace Tennis_Simulation.Controller
                 Console.WriteLine($"{orders[i].id}. => Player {orders[i].player_id} Experience => {orders[i].total_experience}");
             return orders;
         }
-
         private void SortPlayerList(List<Order> orders)
         {
             orders.Sort(
@@ -41,6 +40,10 @@ namespace Tennis_Simulation.Controller
             {
                 orders[i].id = i;
             }
+        }
+        public List<Order> GetOrders()
+        {
+            return orders;
         }
 
     }
