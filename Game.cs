@@ -1,4 +1,6 @@
-﻿using Tennis_Simulation.Controller;
+﻿using System;
+using System.Collections.Generic;
+using Tennis_Simulation.Controller;
 
 namespace Tennis_Simulation
 {
@@ -8,6 +10,7 @@ namespace Tennis_Simulation
         PlayerController playerController;
         TournamentController tournamentController;
         OrderController orderController;
+        DataModel dataModel;
 
         public Game()
         {
@@ -16,7 +19,7 @@ namespace Tennis_Simulation
 
         public void CreateNewGame()
         {
-            DataModel dataModel = dataSerializer.DeseriliazeJSON();
+            dataModel = dataSerializer.DeseriliazeJSON();
             playerController = new PlayerController(dataModel);
             tournamentController = new TournamentController(dataModel);
             orderController = new OrderController();
@@ -26,7 +29,7 @@ namespace Tennis_Simulation
        public void StartGame()
         {
             tournamentController.StartTournaments(playerController.GetPlayers());
-            orderController.OrderPlayers(tournamentController.GetTournamentResultPlayers(), playerController.GetPlayers());
+            orderController.OrderPlayers(playerController.GetPlayers());
         }
 
     }

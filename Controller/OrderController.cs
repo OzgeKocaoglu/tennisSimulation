@@ -14,22 +14,16 @@ namespace Tennis_Simulation.Controller
         }
 
 
-        public List<Order> OrderPlayers(List<Player> tournamentResultPlayers, List<Player> players)
+        public List<Order> OrderPlayers(List<Player> players)
         {
-
-            //SortPlayerList(tournamentResultPlayers, players);
-            Console.WriteLine("-------------------Sorted players------------------\n");
-            for (int i=0; i<tournamentResultPlayers.Count; i++)
+                //SortPlayerList(tournamentResultPlayers, players);
+            Console.WriteLine("-------------------Order players------------------\n");
+            for (int i=0; i< players.Count; i++)
             {
-                Player playerTemp = players.Find(
-                    delegate (Player player)
-                    {
-                        return player.id == tournamentResultPlayers[i].id;
-                    }
-                );
-                int gainedExperience = tournamentResultPlayers[i].experience - playerTemp.experience;
-                Order order = new Order(i + 1, tournamentResultPlayers[i].id, gainedExperience, tournamentResultPlayers[i].experience);
-                orders.Add(order);
+
+                  int totalExperience = players[i].gainedExperience - players[i].experience;
+                  Order order = new Order(i + 1, players[i].id, players[i].gainedExperience, totalExperience);
+                  orders.Add(order);
             }
             return orders;
         }

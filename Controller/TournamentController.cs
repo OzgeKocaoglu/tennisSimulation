@@ -22,27 +22,12 @@ namespace Tennis_Simulation
 
         public void StartTournaments(List<Player> players)
         {
-
             for(int i = 0; i <alltournaments.Count; i++)
             {
-                GetTournamentResultPlayers();
                 tournamentPlayers = alltournaments[i].StartTournament(players);
                 
             }
            
         }
-
-        public List<Player> GetTournamentResultPlayers()
-        {
-            for(int i=0; i< tournamentPlayers.Count; i++)
-            {
-                Console.WriteLine($"tournament player experiences: \n {i + 1}. Player: \n id = {tournamentPlayers[i].id} \n experience={tournamentPlayers[i].experience}");
-            }
-            return tournamentPlayers;
-        }
-
-
-
-
     }
 }

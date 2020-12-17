@@ -57,7 +57,7 @@ namespace Tennis_Simulation
       
         private List<Player> StartMatchs(List<Matchup> matchups)
         {
-            List<Player> player = new List<Player>();
+            List<Player> winnerPlayers = new List<Player>();
             Match match;
             for(int i =0; i< matchups.Count; i++)
             {
@@ -65,10 +65,10 @@ namespace Tennis_Simulation
                 match = new Match();
                 match.StartMatch(matchups[i], this.surface);
                 AddExperiences(match.Winner, match.Loser);
-                player.Add(SetWinnerPlayer(matchups[i]));
+                winnerPlayers.Add(SetWinnerPlayer(matchups[i]));
                 
             }
-            return player;
+            return winnerPlayers;
         }
 
         private void AddExperiences(Player winner, Player loser)
@@ -77,11 +77,11 @@ namespace Tennis_Simulation
             {
                 if(eliminationTournamentPlayers[i] == winner)
                 {
-                    eliminationTournamentPlayers[i].experience += 20;
+                    eliminationTournamentPlayers[i].gainedExperience += 20;
                 }
                 else if(eliminationTournamentPlayers[i] == loser)
                 {
-                    eliminationTournamentPlayers[i].experience += 10;
+                    eliminationTournamentPlayers[i].gainedExperience += 10;
                 }
             }
             

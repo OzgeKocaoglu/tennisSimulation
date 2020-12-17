@@ -64,11 +64,11 @@ namespace Tennis_Simulation
             {
                 if (leagueTournamentPlayers[i] == winner)
                 {
-                    leagueTournamentPlayers[i].experience += 10;
+                    leagueTournamentPlayers[i].gainedExperience += 10;
                 }
                 else if (leagueTournamentPlayers[i] == loser)
                 {
-                    leagueTournamentPlayers[i].experience += 1;
+                    leagueTournamentPlayers[i].gainedExperience += 1;
                 }
             }
 
