@@ -9,9 +9,7 @@ namespace Tennis_Simulation
         public Player Competing { get; set; }
         public double Score { get; set; }
 
-        public MatchupEntry()
-        {
-        }
+        public MatchupEntry() { }
 
     }
 }

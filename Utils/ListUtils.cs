@@ -17,7 +17,6 @@ namespace Tennis_Simulation
 
             return list;
         }
-
         public static List<List<Player>> SettingUpPlayerList(List<Player> players)
         {
             if ((players.Count % 2) != 0)

@@ -20,7 +20,6 @@ namespace Tennis_Simulation
             tournamentSurface = type;
             CreateRules();
         }
-
         public int addPointToPlayer()
         {
             for(int i=0; i<rules.Count; i++)
@@ -29,7 +28,6 @@ namespace Tennis_Simulation
             }
             return playerPoint;
         }
-
         private void CreateRules()
         {
             rules.Add(new MatchRule("matchRule", 1));

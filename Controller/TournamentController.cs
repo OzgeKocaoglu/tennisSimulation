@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 
 namespace Tennis_Simulation
@@ -19,7 +18,6 @@ namespace Tennis_Simulation
         {
             return alltournaments;
         }
-
         public void StartTournaments(List<Player> players)
         {
             for(int i = 0; i <alltournaments.Count; i++)

@@ -37,9 +37,7 @@ namespace Tennis_Simulation
             return eliminationTournamentPlayers;
 
         }
-
-
-       private void MatchPlayers(List<Player> players)
+        private void MatchPlayers(List<Player> players)
         {
             Console.WriteLine("Matching players...\n");
             List<Matchup> Matchups = new List<Matchup>();
@@ -53,8 +51,6 @@ namespace Tennis_Simulation
             Rounds.Add(Matchups);
 
         }
-
-      
         private List<Player> StartMatchs(List<Matchup> matchups)
         {
             List<Player> winnerPlayers = new List<Player>();
@@ -70,7 +66,6 @@ namespace Tennis_Simulation
             }
             return winnerPlayers;
         }
-
         private void AddExperiences(Player winner, Player loser)
         {
             for (int i=0; i<eliminationTournamentPlayers.Count; i++)
@@ -86,7 +81,6 @@ namespace Tennis_Simulation
             }
             
         }
-
         public Player SetWinnerPlayer(Matchup matchup)
         {
             Player winnerPlayer = new Player();

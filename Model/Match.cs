@@ -24,7 +24,6 @@ namespace Tennis_Simulation
 
             CalculateWinner(matchup.Entries[0], matchup.Entries[1]);
         }
-
         public void CalculateWinner(MatchupEntry playerOne, MatchupEntry playerTwo)
         {
             double sum = playerOne.Score + playerTwo.Score;

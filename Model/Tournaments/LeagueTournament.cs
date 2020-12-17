@@ -9,11 +9,13 @@ namespace Tennis_Simulation
     {
         public List<Matchup> Matchups { get; set; }
         private List<Player> leagueTournamentPlayers { get; set; }
+
         public LeagueTournament(int id, string surface, string type) : base(id, surface, type)
         {
             Matchups = new List<Matchup>();
             leagueTournamentPlayers = new List<Player>();
         }
+
         public List<Player> StartTournament(List<Player> players)
         {
             Console.WriteLine("League Tournament is starting\n");
@@ -23,8 +25,6 @@ namespace Tennis_Simulation
             StartMatchs(Matchups);
             return leagueTournamentPlayers;
         }
-
-
         public void MatchPlayers(List<Player> players)
         {
             Console.WriteLine("Matching players...\n");
@@ -42,7 +42,6 @@ namespace Tennis_Simulation
             }
             Matchups.Shuffle();
         }
-
         private List<Player> StartMatchs(List<Matchup> matchups)
         {
             List<Player> player = new List<Player>();
@@ -57,7 +56,6 @@ namespace Tennis_Simulation
             }
             return player;
         }
-
         private void AddExperiences(Player winner, Player loser)
         {
             for (int i = 0; i < leagueTournamentPlayers.Count; i++)

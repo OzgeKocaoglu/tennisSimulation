@@ -13,11 +13,8 @@ namespace Tennis_Simulation.Controller
             orders = new List<Order>();
         }
 
-
         public List<Order> OrderPlayers(List<Player> players)
         {
-                //SortPlayerList(tournamentResultPlayers, players);
-            Console.WriteLine("-------------------Order players------------------\n");
             for (int i=0; i< players.Count; i++)
             {
 
@@ -25,41 +22,26 @@ namespace Tennis_Simulation.Controller
                   Order order = new Order(i + 1, players[i].id, players[i].gainedExperience, totalExperience);
                   orders.Add(order);
             }
+            Console.WriteLine("-------------------Order players------------------\n");
+            SortPlayerList(orders);
+            for (int i = 0; i < orders.Count; i++)
+                Console.WriteLine($"{orders[i].id}. => Player {orders[i].player_id} Experience => {orders[i].total_experience}");
             return orders;
         }
 
-
-
-        /*private void SortPlayerList(List<Player> tournamentResultPlayers, List<Player> players)
+        private void SortPlayerList(List<Order> orders)
         {
-            tournamentResultPlayers.Sort(
-              delegate (Player player1, Player player2)
-              {
-                  int compareExperience = player1.experience.CompareTo(player2.experience);
-                  Console.WriteLine("compare experience: " + compareExperience);
-                  if (compareExperience == 0)
+            orders.Sort(
+              delegate (Order order1, Order order2)
                   {
-                      Console.WriteLine("Compared experience equal");
-                      Player playerOne = players.Find(
-                          delegate (Player player)
-                          {
-                              return player.id == player1.id;
-                          }
-                     );
-                      Player playerTwo = players.Find(
-                          delegate (Player player)
-                          {
-                              return player.id == player2.id;
-                          }
-                     );
-                      Console.WriteLine($"First experience is:\n Player one {playerOne.experience} \n Player two {playerTwo.experience}");
-                      return playerOne.experience.CompareTo(playerTwo.experience);
+                      return order1.CompareTo(order2);
                   }
-                  return compareExperience;
-              }
-
               );
-        }*/
+            for(int i=0; i<orders.Count; i++)
+            {
+                orders[i].id = i;
+            }
+        }
 
     }
 }

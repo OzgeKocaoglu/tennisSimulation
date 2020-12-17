@@ -14,9 +14,6 @@ namespace Tennis_Simulation
         public PlayerSkills skills { get; set; }
         #endregion
 
-        public Player()
-        {
-
-        }
+        public Player() { }
     }
 }

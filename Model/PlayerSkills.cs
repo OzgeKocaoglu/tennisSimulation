@@ -7,9 +7,7 @@ namespace Tennis_Simulation
         public int grass { get; set; }
         public int hard { get; set; }
 
-        public PlayerSkills()
-        {
-        }
+        public PlayerSkills() { }
 
     }
 }

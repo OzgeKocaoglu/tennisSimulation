@@ -4,7 +4,6 @@ namespace Tennis_Simulation
 {
     static class TournamentConverter
     {
-
         public static List<ITournament> ConvertTournaments(List<Tournament> tournaments)
         {
             List<ITournament> alltournaments = new List<ITournament>();
