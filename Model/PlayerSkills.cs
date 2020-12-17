@@ -8,6 +8,5 @@ namespace Tennis_Simulation
         public int hard { get; set; }
 
         public PlayerSkills() { }
-
     }
 }

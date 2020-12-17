@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Tennis_Simulation.Controller;
+﻿using Tennis_Simulation.Controller;
 
 namespace Tennis_Simulation
 {

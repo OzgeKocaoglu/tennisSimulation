@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,7 +8,6 @@ namespace Tennis_Simulation
 {
     class DataSerializer
     {
-
         public DataModel DeseriliazeJSON()
         {
             DataModel dataModel;
@@ -36,17 +34,13 @@ namespace Tennis_Simulation
 
             return null;
         }
-
         public void SeriliazeJSON(List<Order> orders)
         {
-            //File.WriteAllText(GlobalVariables.OUTPUT_PATH, JsonConvert.SerializeObject(orders));
-
             using (StreamWriter file = File.CreateText(GlobalVariables.OUTPUT_PATH))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, orders);
             }
         }
-
     }
 }

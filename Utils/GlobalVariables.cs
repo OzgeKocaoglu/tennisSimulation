@@ -1,5 +1,4 @@
-﻿
-namespace Tennis_Simulation
+﻿namespace Tennis_Simulation
 {
     class GlobalVariables
     {

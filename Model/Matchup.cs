@@ -19,6 +19,5 @@ namespace Tennis_Simulation
                 Entries.Add(entry);
             }
         }
-
     }
 }

@@ -22,7 +22,7 @@ namespace Tennis_Simulation.Controller
                   Order order = new Order(i + 1, players[i].id, players[i].gainedExperience, totalExperience);
                   orders.Add(order);
             }
-            Console.WriteLine("-------------------Order players------------------\n");
+            Console.WriteLine("-------------------Ordered players------------------\n");
             SortPlayerList(orders);
             for (int i = 0; i < orders.Count; i++)
                 Console.WriteLine($"{orders[i].id}. => Player {orders[i].player_id} Experience => {orders[i].total_experience}, gained Experience => {orders[i].gained_experience}");

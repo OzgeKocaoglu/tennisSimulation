@@ -6,7 +6,7 @@ namespace Tennis_Simulation
     /// </summary>
     class Player
     {
-        #region Getter/Setters
+        #region Variables
         public int id { get; set; }
         public string hand { get; set; }
         public int experience { get; set; }

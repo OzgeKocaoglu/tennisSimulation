@@ -44,7 +44,5 @@ namespace Tennis_Simulation
                 Loser = playerOne.Competing;
             }
         }
-
-
     }
 }

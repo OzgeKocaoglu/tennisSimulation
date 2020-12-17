@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Security.Cryptography;
-
 
 namespace Tennis_Simulation
 {
@@ -71,6 +69,5 @@ namespace Tennis_Simulation
             }
 
         }
-
     }
 }

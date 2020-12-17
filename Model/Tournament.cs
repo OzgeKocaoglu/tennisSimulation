@@ -6,9 +6,11 @@ namespace Tennis_Simulation
     /// </summary>
     class Tournament
     {
+        #region Variables
         public int id { get; set; }
         public string surface { get; set; }
         public string type { get; set; }
+        #endregion
 
         public Tournament(int id, string surface, string type)
         {
@@ -16,6 +18,5 @@ namespace Tennis_Simulation
             this.surface = surface;
             this.type = type;
         }
-       
     }
 }

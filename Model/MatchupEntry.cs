@@ -1,5 +1,4 @@
-﻿
-namespace Tennis_Simulation
+﻿namespace Tennis_Simulation
 {
     /// <summary>
     /// Represents one player int the matchup
@@ -10,6 +9,5 @@ namespace Tennis_Simulation
         public double Score { get; set; }
 
         public MatchupEntry() { }
-
     }
 }

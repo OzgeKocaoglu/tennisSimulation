@@ -107,9 +107,5 @@ namespace Tennis_Simulation
             return winnerPlayer;
 
         }
-
-
-       
-
     }
 }
