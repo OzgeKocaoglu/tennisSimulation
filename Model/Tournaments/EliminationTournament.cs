@@ -77,15 +77,11 @@ namespace Tennis_Simulation
             {
                 if(eliminationTournamentPlayers[i] == winner)
                 {
-                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu ilk deneyim puanı: {eliminationTournamentPlayers[i].experience}");
                     eliminationTournamentPlayers[i].experience += 20;
-                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu son deneyim puanı: {eliminationTournamentPlayers[i].experience}");
                 }
                 else if(eliminationTournamentPlayers[i] == loser)
                 {
-                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu ilk deneyim puanı: {eliminationTournamentPlayers[i].experience}");
                     eliminationTournamentPlayers[i].experience += 10;
-                    Console.WriteLine($"Elimination Tournament {eliminationTournamentPlayers[i].id}. oyuncu son deneyim puanı: {eliminationTournamentPlayers[i].experience}");
                 }
             }
             
