@@ -14,12 +14,34 @@ namespace Tennis_Simulation
             Matchups = new List<Matchup>();
             leagueTournamentPlayers = new List<Player>();
         }
+        public List<Player> StartTournament(List<Player> players)
+        {
+            Console.WriteLine("League Tournament is starting\n");
+            leagueTournamentPlayers = players;
+            MatchPlayers(leagueTournamentPlayers);
+            Console.WriteLine($"Matchup count is : {Matchups.Count}");
+            //StartMatchs(Matchups);
+            return leagueTournamentPlayers;
+        }
+
 
         public void MatchPlayers(List<Player> players)
         {
             Console.WriteLine("Matching players...\n");
             //Match one player with all players
             //Do this for all players
+            for(int i = 0; i< players.Count; i++)
+            {
+                for(int j = i+1; j < players.Count; j++)
+                {
+                    List<Player> playerList = new List<Player>();
+                    playerList.Add(players[i]);
+                    playerList.Add(players[j]);
+                    Matchup matchup = new Matchup(playerList);
+                    Console.WriteLine($"Player {players[i].id} is matching up with Player {players[j].id}");
+                    Matchups.Add(matchup);
+                }
+            }
         }
 
         private List<Player> StartMatchs(List<Matchup> matchups)
@@ -37,15 +59,7 @@ namespace Tennis_Simulation
             return player;
         }
 
-        public List<Player> StartTournament(List<Player> players)
-        {
-            Console.WriteLine("League Tournament is starting\n");
-            leagueTournamentPlayers = players;
-            //MatchPlayers(leagueTournamentPlayers);
-            //StartMatchs(Matchups);
-            return leagueTournamentPlayers;
-        }
-
+    
 
         #region Utility Methods
         private RNGCryptoServiceProvider Rand = new RNGCryptoServiceProvider();
