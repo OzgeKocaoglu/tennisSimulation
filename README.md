@@ -1,29 +1,21 @@
-# tennisSimulation
+# tennis simulation
 This is a tennis simulation made with C# for Peak Games. 
 
 ## Compile
 
-For installatio
+For Compile change GlobalVariables.cs INPUT_PATH value to your input.json file directory and OUTPUT_PATH value to your file directory path.
 
-```bash
-npm install discord.js
-npm start index.js
+```
+class GlobalVariables
+    {
+        public static string INPUT_PATH = @"C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\input.json"; //Change here for input
+        public static string OUTPUT_PATH = @"C:\Users\Özge Kocaoğlu\source\repos\Tennis Simulation\output.json"; //Change here for output. Don't erase '\output.json'
+    }
 ```
 
 
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Running
+No need any dependencies. 
 
-Please make sure to update tests as appropriate.
-
-## Command List:
-- !group
-
-### Bot UI's
-
-- Embedded Commands
-
-
-![](/images/group_image.png)
 
