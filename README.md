@@ -3,7 +3,9 @@ This is a tennis simulation made with C# for Peak Games.
 
 ## Compile
 
-For Compile change GlobalVariables.cs INPUT_PATH value to your input.json file directory and OUTPUT_PATH value to your file directory path.
+For Compile 
+Change GlobalVariables.cs file.
+INPUT_PATH string value to your input.json file directory and OUTPUT_PATH value to your file directory path.
 
 ```
 class GlobalVariables
