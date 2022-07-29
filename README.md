@@ -1,5 +1,5 @@
 # tennis simulation
-This is a tennis simulation made with C# for Peak Games. 
+This is a tennis simulation made with C#. 
 
 ## Compile
 
